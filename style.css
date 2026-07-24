@@ -1,0 +1,333 @@
+/* ==========================================================
+   Token warna & tipografi
+   ========================================================== */
+:root{
+  --navy-950:#211a4f;
+  --navy-900:#241d5c;
+  --indigo-800:#332a78;
+  --blue-600:#1656d6;
+  --blue-500:#4e5fdb;
+  --blue-400:#7c8cea;
+  --blue-100:#eaf0ff;
+  --bg-page:#f6f7fb;
+  --white:#ffffff;
+  --text-900:#1e1b39;
+  --text-600:#55536e;
+  --text-400:#8b899e;
+  --border:#e6e5f0;
+  --gold:#f5b300;
+  --silver:#b9bfca;
+  --bronze:#cd7f32;
+  --radius-md:10px;
+  --radius-lg:16px;
+  --shadow-card:0 6px 24px rgba(35,26,90,.08);
+  --font-display:'Poppins','Segoe UI',system-ui,sans-serif;
+  --font-body:'Inter','Segoe UI',system-ui,sans-serif;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  font-family:var(--font-body);
+  color:var(--text-900);
+  background:var(--bg-page);
+  line-height:1.6;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{font-family:var(--font-display);margin:0;color:var(--text-900);}
+p{margin:0 0 12px;}
+ul{list-style:none;margin:0;padding:0;}
+
+/* ==========================================================
+   Navbar
+   ========================================================== */
+.navbar{
+  background:var(--navy-900);
+  position:sticky;
+  top:0;
+  z-index:50;
+}
+.navbar-inner{
+  max-width:1200px;
+  margin:0 auto;
+  padding:14px 24px;
+  display:flex;
+  align-items:center;
+  gap:24px;
+}
+.brand{display:flex;align-items:center;gap:10px;color:var(--white);flex-shrink:0;}
+.brand-logo{
+  width:38px;height:38px;border-radius:50%;
+  background:var(--white);color:var(--navy-900);
+  display:flex;align-items:center;justify-content:center;
+}
+.brand-name{font-family:var(--font-display);font-weight:600;font-size:15px;}
+.nav-menu{display:flex;gap:28px;margin-left:8px;flex:1;}
+.nav-menu a{color:var(--white);font-size:14.5px;font-weight:500;opacity:.9;}
+.nav-menu a:hover{opacity:1;text-decoration:underline;text-underline-offset:4px;}
+.btn-kontak{
+  background:var(--blue-600);
+  color:var(--white)!important;
+  padding:9px 20px;
+  border-radius:8px;
+  font-weight:600;
+  font-size:14px;
+  white-space:nowrap;
+}
+.nav-toggle{
+  display:none;
+  flex-direction:column;
+  gap:5px;
+  background:none;border:none;cursor:pointer;padding:6px;
+}
+.nav-toggle span{width:22px;height:2px;background:var(--white);display:block;}
+
+/* ==========================================================
+   Hero
+   ========================================================== */
+.hero{
+  background: linear-gradient(120deg, #86a2db, #001eff 70%);
+  color: #ffffff;
+  padding: 60px 24px 70px;
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;
+  display:grid;grid-template-columns:1.1fr .9fr;
+  gap:40px;align-items:center;
+}
+.hero-eyebrow{
+  font-size:13px;font-weight:600;letter-spacing:.04em;
+  opacity:.9;margin-bottom:10px;
+}
+.hero h1{font-size:clamp(28px,4vw,42px);line-height:1.2;margin-bottom:16px;}
+.hero p{opacity:.92;max-width:46ch;}
+.hero-illustration{
+  aspect-ratio:4/3;border-radius:var(--radius-lg);
+  background:rgba(255,255,255,.14);
+  display:flex;align-items:center;justify-content:center;
+  color:rgba(255,255,255,.85);
+}
+
+/* ==========================================================
+   Layout umum & section titles
+   ========================================================== */
+.container{max-width:1200px;margin:0 auto;padding:0 24px;}
+.section{padding:56px 0;}
+.section-eyebrow{
+  color:var(--blue-600);font-weight:700;font-size:13px;
+  text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px;
+}
+.section-title{font-size:24px;margin-bottom:6px;}
+.section-sub{color:var(--text-600);font-size:14.5px;max-width:60ch;}
+
+/* ==========================================================
+   Sambutan Kepala Sekolah
+   ========================================================== */
+.sambutan{
+  display:grid;grid-template-columns:280px 1fr;gap:36px;align-items:start;
+}
+.sambutan-photo{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-card);}
+.sambutan-name{
+  display:inline-block;font-weight:700;font-size:15px;margin:14px 0 18px;
+  border-bottom:2px solid var(--blue-600);padding-bottom:6px;
+}
+
+/* ==========================================================
+   Artikel & Blog + Prestasi
+   ========================================================== */
+.artikel-wrap{
+  display:grid;grid-template-columns:1fr 300px;gap:28px;align-items:start;
+}
+.artikel-slider{position:relative;}
+.artikel-track{
+  display:grid;grid-auto-flow:column;grid-auto-columns:calc(33.333% - 14px);
+  gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px;
+  scrollbar-width:none;
+}
+.artikel-track::-webkit-scrollbar{display:none;}
+.artikel-card{
+  scroll-snap-align:start;
+  background:var(--white);border-radius:var(--radius-md);
+  overflow:hidden;box-shadow:var(--shadow-card);
+  border:1px solid var(--border);
+  display:flex;flex-direction:column;
+}
+.artikel-card .thumb{aspect-ratio:16/10;background:var(--blue-100);}
+.artikel-card .thumb img{width:100%;height:100%;object-fit:cover;}
+.artikel-card .body{padding:14px 16px 18px;flex:1;display:flex;flex-direction:column;}
+.artikel-card .kategori-badge{
+  align-self:flex-start;background:var(--blue-600);color:var(--white);
+  font-size:11px;font-weight:700;padding:4px 10px;border-radius:5px;margin-bottom:10px;
+}
+.artikel-card h3{font-size:15.5px;line-height:1.35;margin-bottom:10px;flex:1;}
+.artikel-card .meta{
+  display:flex;gap:14px;font-size:12px;color:var(--text-400);
+  border-top:1px solid var(--border);padding-top:10px;margin-top:auto;
+}
+.slider-btn{
+  position:absolute;top:40%;width:34px;height:34px;border-radius:50%;
+  background:var(--white);border:1px solid var(--border);box-shadow:var(--shadow-card);
+  display:flex;align-items:center;justify-content:center;cursor:pointer;
+}
+.slider-btn.prev{left:-17px;}
+.slider-btn.next{right:-17px;}
+
+.prestasi-box{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:18px;box-shadow:var(--shadow-card);
+}
+.prestasi-box .head{display:flex;gap:10px;align-items:flex-start;margin-bottom:14px;}
+.prestasi-box .head .icon{
+  width:34px;height:34px;border-radius:8px;background:var(--blue-100);color:var(--blue-600);
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.prestasi-box .head h4{font-size:15px;margin-bottom:2px;}
+.prestasi-box .head p{font-size:12.5px;color:var(--text-600);margin:0;}
+.prestasi-item{
+  border:1px solid var(--border);border-radius:8px;padding:10px 12px;
+  display:flex;gap:10px;align-items:flex-start;margin-bottom:10px;
+}
+.prestasi-item:last-child{margin-bottom:0;}
+.prestasi-item .rank{
+  width:26px;height:26px;border-radius:50%;color:#fff;font-size:12px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+}
+.prestasi-item .rank.r1{background:var(--gold);}
+.prestasi-item .rank.r2{background:var(--silver);}
+.prestasi-item .rank.r3{background:var(--bronze);}
+.prestasi-item h5{font-size:13px;margin-bottom:3px;}
+.prestasi-item p{font-size:12px;color:var(--text-600);margin:0;}
+
+/* ==========================================================
+   Fasilitas
+   ========================================================== */
+.fasilitas-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:20px;
+}
+.fasilitas-card{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--radius-md);
+  padding:24px 18px;text-align:center;box-shadow:var(--shadow-card);
+}
+.fasilitas-card .icon{
+  width:46px;height:46px;margin:0 auto 14px;border-radius:10px;background:var(--blue-100);
+  color:var(--blue-600);display:flex;align-items:center;justify-content:center;
+}
+.fasilitas-card h4{font-size:14.5px;margin-bottom:6px;}
+.fasilitas-card p{font-size:12.5px;color:var(--text-600);margin:0;}
+
+/* ==========================================================
+   Placeholder gambar (dipakai saat kolom gambar kosong)
+   ========================================================== */
+.img-placeholder{
+  width:100%;height:100%;min-height:120px;
+  background:repeating-linear-gradient(45deg,#eef0f8,#eef0f8 10px,#e4e6f4 10px,#e4e6f4 20px);
+  border:1.5px dashed #c3c7e0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  color:#8b899e;gap:6px;font-size:11.5px;font-weight:600;text-align:center;
+}
+
+/* ==========================================================
+   Halaman Artikel Detail
+   ========================================================== */
+.breadcrumb{font-size:13px;color:var(--text-600);margin-bottom:18px;}
+.breadcrumb a{color:var(--blue-600);}
+.breadcrumb span{margin:0 6px;}
+.artikel-detail{
+  background:var(--white);border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:28px;box-shadow:var(--shadow-card);
+}
+.badge-berita{
+  display:inline-block;background:var(--blue-600);color:#fff;font-size:12px;font-weight:700;
+  padding:6px 14px;border-radius:6px;margin-bottom:16px;
+}
+.artikel-detail h1{font-size:clamp(22px,3vw,30px);line-height:1.3;margin-bottom:12px;}
+.artikel-meta{
+  display:flex;gap:18px;color:var(--text-400);font-size:13px;margin-bottom:20px;
+}
+.artikel-meta span{display:flex;align-items:center;gap:6px;}
+.artikel-detail .thumb-detail{
+  aspect-ratio:16/8;border-radius:var(--radius-md);overflow:hidden;margin-bottom:22px;background:var(--blue-100);
+}
+.artikel-detail .thumb-detail img{width:100%;height:100%;object-fit:cover;}
+.artikel-content p{color:var(--text-600);font-size:15px;margin-bottom:16px;}
+
+.related-title{font-size:17px;margin:36px 0 16px;}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+
+/* ==========================================================
+   Form Kontak (Beranda)
+   ========================================================== */
+.kontak-box{
+  max-width:640px;margin:0 auto;background:var(--white);
+  border:1px solid var(--border);border-radius:var(--radius-lg);
+  padding:28px;box-shadow:var(--shadow-card);
+}
+.form-kontak .field-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px; resize: vertical;}
+.form-kontak .field{margin-bottom:16px;}
+.form-kontak label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;}
+.form-kontak input,.form-kontak textarea{
+  width:100%;padding:11px 13px;border:1px solid var(--border);
+  border-radius:8px;font-size:14px;font-family:inherit;
+}
+.form-kontak textarea{min-height:120px;resize:vertical;}
+.btn-submit-kontak{
+  width:100%;padding:12px;border:none;border-radius:8px;
+  background:var(--blue-600);color:#fff;font-weight:700;font-size:14.5px;cursor:pointer;
+}
+.btn-submit-kontak:hover{background:var(--navy-900);}
+.alert-success-form{background:#e9f8ef;color:#1a7f4b;padding:10px 12px;border-radius:8px;font-size:13px;margin-bottom:16px;}
+.alert-error-form{background:#fdecea;color:#b3261e;padding:10px 12px;border-radius:8px;font-size:13px;margin-bottom:16px;}
+@media (max-width:560px){
+  .form-kontak .field-grid{grid-template-columns:1fr;}
+}
+
+/* ==========================================================
+   Footer
+   ========================================================== */
+.site-footer{background:var(--navy-950);color:rgba(255,255,255,.85);margin-top:40px;}
+.footer-inner{
+  max-width:1200px;margin:0 auto;padding:46px 24px 28px;
+  display:grid;grid-template-columns:1.3fr 1fr 1fr .6fr;gap:30px;
+}
+.footer-logo{
+  width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.12);
+  display:flex;align-items:center;justify-content:center;margin-bottom:14px;
+}
+.footer-col h4{color:#fff;font-size:14px;margin-bottom:14px;}
+.footer-col p{font-size:13px;margin-bottom:8px;color:rgba(255,255,255,.7);}
+.footer-col a{display:block;font-size:13px;margin-bottom:10px;color:rgba(255,255,255,.7);}
+.footer-col a:hover{color:#fff;}
+.footer-mascot{display:flex;align-items:flex-start;justify-content:center;color:rgba(255,255,255,.5);}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);
+  padding:16px 24px;display:flex;gap:24px;flex-wrap:wrap;
+  max-width:1200px;margin:0 auto;font-size:12.5px;color:rgba(255,255,255,.65);
+}
+
+/* ==========================================================
+   Responsif
+   ========================================================== */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr;}
+  .sambutan{grid-template-columns:1fr;}
+  .artikel-wrap{grid-template-columns:1fr;}
+  .fasilitas-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-inner{grid-template-columns:1fr 1fr;}
+  .related-grid{grid-template-columns:1fr;}
+}
+@media (max-width:680px){
+  .nav-menu{
+    position:absolute;top:100%;left:0;right:0;background:var(--navy-900);
+    flex-direction:column;gap:0;padding:8px 0;
+    max-height:0;overflow:hidden;transition:max-height .25s ease;
+  }
+  .nav-menu.open{max-height:300px;}
+  .nav-menu a{padding:12px 24px;border-top:1px solid rgba(255,255,255,.08);}
+  .nav-toggle{display:flex;}
+  .btn-kontak{display:none;}
+  .artikel-track{grid-auto-columns:85%;}
+  .fasilitas-grid{grid-template-columns:1fr;}
+  .footer-inner{grid-template-columns:1fr;}
+}
